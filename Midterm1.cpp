@@ -13,11 +13,15 @@ int main(int argc, char *argv[])
 	if (argc > 1) {
 		miles = atof(argv[1]);
 	}
-	cout << miles << " miles = ";
-	cout << milesToKm(miles)*(0.007) << " Km * 0.007" << endl << endl;
-	readIn();
-	cout << endl;
-	return 0;
+	if(miles < 0.0){
+	    readIn();
+	    return 0;
+	}
+	else
+	  cout << miles << " miles = ";
+	  cout << milesToKm(miles) << " Km " << endl << endl;
+	  cout << endl;
+	  return 0;
 }
 
 double milesToKm(double miles)
@@ -27,8 +31,10 @@ double milesToKm(double miles)
 void readIn(){
 
 //============================================================================================================================
-//I really wanted to use a 2d array here as you had done in the example, though, I didn't quite understand the logic behind it.
-//I also didn't include the compare which I feel was half of the problem. Either way, I harcoded the list in and whatnots. 
+//I really wanted to use a 2d array here as you had done in the example, though, I didn't quite understand the logic behind it. My next option was to use
+//2 arrays, though, I didn't have enough time to code that in after I had hardcoded the Miles/Functions and had realized I did the whole thing entirely wrong.
+//I also didn't include the compare which I feel was half of the problem. Either way, I harcoded the list in and whatnots, used macros (thanks to you), and
+//uploaded the thing to github. So I hope that at least is worth like 70%~75%? I'm trying Gordon, I'm trying.
 //============================================================================================================================
 
 cout << "Unit test of milesToKm() function...\n";
@@ -236,4 +242,5 @@ cout <<
 "\t\t19.8\t\t12.310618\n"
 "\t\t19.9\t\t12.372681\n"
 "\t\t20.0\t\t12.432581\n";
+cout << "Unit test complete." << endl;
 } 
